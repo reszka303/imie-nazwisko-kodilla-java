@@ -6,58 +6,58 @@ import java.util.ArrayList;
 
 public class OddNumberExterminatorTestSuite {
 
-    @Before
+@Before
     public void before() {
-        System.out.println("Test Case: begin");
-    }
+    System.out.println("Test case: begin");
+}
 
-    @After
+@After
     public void after() {
-        System.out.println("Test Case: end");
-    }
+    System.out.println("Test case: end");
+}
 
-    @BeforeClass
-    public static void beforeClass() {
-        System.out.println("Test Suite: begin");
-    }
-
-    @AfterClass
+@BeforeClass
+    public static void beforeClass(){
+    System.out.println("Test suite: begin");
+}
+@AfterClass
     public static void afterClass() {
-        System.out.println("Test Suite: end");
+    System.out.println("Test suite: end");
+}
+
+@Test
+    public void testOddNumbersExterminatorEmptyList(){
+
+    ArrayList<Integer> emptyList = new ArrayList<>();
+    OddNumbersExterminator exterminator = new OddNumbersExterminator();
+    ArrayList<Integer> result = exterminator.exterminate(emptyList);
+
+    Assert.assertEquals(0, result);
     }
 
-    @Test
-    public void testOddNumbersExterminatorEmptyList() {
-
-        ArrayList<Integer> emptyList = new ArrayList<>();
-
-        OddNumbersExterminator exterminator = new OddNumbersExterminator();
-        ArrayList<Integer> result = exterminator.exterminate(emptyList);
-
-        Assert.assertEquals(0, result.size());
-
-    }
-
-    @Test
+@Test
     public void testOddNumbersExterminatorNormalList() {
 
-        ArrayList<Integer> oddAndEvenList = new ArrayList<>();
+    ArrayList<Integer> evenAndOddList = new ArrayList<>();
 
-        oddAndEvenList.add(1);
-        oddAndEvenList.add(2);
-        oddAndEvenList.add(3);
-        oddAndEvenList.add(4);
-        oddAndEvenList.add(5);
+   evenAndOddList.add(1);
+   evenAndOddList.add(2);
+   evenAndOddList.add(3);
+   evenAndOddList.add(4);
+   evenAndOddList.add(5);
 
-        ArrayList<Integer> evenList = new ArrayList<>();
+   ArrayList<Integer> evenList = new ArrayList<>();
 
-        evenList.add(2);
-        evenList.add(4);
+   evenList.add(2);
+   evenList.add(4);
 
-        OddNumbersExterminator exterminator = new OddNumbersExterminator();
-        ArrayList<Integer> result = exterminator.exterminate(oddAndEvenList);
+   OddNumbersExterminator exterminator = new OddNumbersExterminator();
+   ArrayList<Integer> result = exterminator.exterminate(evenAndOddList);
 
-        Assert.assertEquals(evenList, result);
+   Assert.assertEquals(evenList, result);
+
+
 
     }
 }
+
