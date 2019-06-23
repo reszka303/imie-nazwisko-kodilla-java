@@ -3,6 +3,7 @@ package com.kodilla.testing.forum.statistics;
 import org.junit.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -41,11 +42,14 @@ public class ForumStatisticsTestSuite {
     public void testNumberOfPostsEqualOneHundred() {
         Statistics statisticsMock = mock(Statistics.class);
         int numberOfPosts = 1000;
+        int numberOfComments = 2000;
         when(statisticsMock.postsCount()).thenReturn(numberOfPosts);
+        when(statisticsMock.commentsCount()).thenReturn(numberOfComments);
         StatisticsOfForum statisticsOfForum = new StatisticsOfForum();
         statisticsOfForum.calculateAdvStatistics(statisticsMock);
 
         Assert.assertEquals(1000, statisticsOfForum.getNumberOfPosts());
+        Assert.assertEquals(2.0,statisticsOfForum.getAverageOfCommentsOnPost(),0.01);
     }
 
     @Test
@@ -59,32 +63,48 @@ public class ForumStatisticsTestSuite {
         Assert.assertEquals(0,statisticsOfForum.getNumberOfComments());
     }
 
-    @Test public void  testWhileCommentsAreLessFromPosts() {
+    @Test
+    public void  testWhileCommentsAreLessFromPosts() {
         Statistics statisticsMock = mock(Statistics.class);
-        int numberOfComments = 0;
-        int numberOfPosts = 1;
+        int numberOfComments = 50;
+        int numberOfPosts = 100;
+        ArrayList<String> numbersOfUsers = new ArrayList<>();
+        for (int i = 0; i < 20 ; i++) {
+            numbersOfUsers.add("");
+        }
+
         when(statisticsMock.commentsCount()).thenReturn(numberOfComments);
         when(statisticsMock.postsCount()).thenReturn(numberOfPosts);
+        when(statisticsMock.userNames()).thenReturn(numbersOfUsers);
         StatisticsOfForum statisticsOfForum = new StatisticsOfForum();
         statisticsOfForum.calculateAdvStatistics(statisticsMock);
 
-        Assert.assertEquals(0,statisticsOfForum.getNumberOfComments());
-        Assert.assertEquals(1,statisticsOfForum.getNumberOfPosts());
+        Assert.assertEquals(50,statisticsOfForum.getNumberOfComments());
+        Assert.assertEquals(100,statisticsOfForum.getNumberOfPosts());
+        Assert.assertEquals(20,statisticsOfForum.getNumbersOfUsers());
+        Assert.assertEquals(5.0,statisticsOfForum.getAverageOfPostsOnUser(),0.01);
     }
 
     @Test
     public void testWhileCommentsAreMoreFromPosts() {
         Statistics statisticsMock = mock(Statistics.class);
-        int numberOfComments = 1;
-        int numberOfPosts = 0;
+        int numberOfComments = 250;
+        int numberOfPosts = 150;
+        List<String> numbersOfUsers = new ArrayList<>();
+        for (int i = 0; i < 49 ; i++) {
+            numbersOfUsers.add("");
+        }
         when(statisticsMock.commentsCount()).thenReturn(numberOfComments);
         when(statisticsMock.postsCount()).thenReturn(numberOfPosts);
+        when(statisticsMock.userNames()).thenReturn(numbersOfUsers);
         StatisticsOfForum statisticsOfForum = new StatisticsOfForum();
         statisticsOfForum.calculateAdvStatistics(statisticsMock);
 
 
-        Assert.assertEquals(1, statisticsOfForum.getNumberOfComments());
-        Assert.assertEquals(0,statisticsOfForum.getNumberOfPosts());
+        Assert.assertEquals(250, statisticsOfForum.getNumberOfComments());
+        Assert.assertEquals(150, statisticsOfForum.getNumberOfPosts());
+        Assert.assertEquals(49, statisticsOfForum.getNumbersOfUsers());
+        Assert.assertEquals(5.0, statisticsOfForum.getAverageOfCommentsOnUser(),0.01);
     }
 
     @Test
@@ -92,8 +112,6 @@ public class ForumStatisticsTestSuite {
         Statistics statisticsMock = mock(Statistics.class);
         ArrayList<String> numbersOfUsers = new ArrayList<>();
         when(statisticsMock.userNames()).thenReturn(numbersOfUsers);
-        StatisticsOfForum statisticsOfForum = new StatisticsOfForum();
-        statisticsOfForum.calculateAdvStatistics(statisticsMock);
 
         Assert.assertEquals(0, numbersOfUsers.size());
     }
@@ -102,12 +120,11 @@ public class ForumStatisticsTestSuite {
     public void testNumberOfUsersEqualOneHundred() {
         Statistics statisticsMock = mock(Statistics.class);
         ArrayList<String> numberOfUsers = new ArrayList<>();
+
         for (int i = 0; i < 100 ; i++) {
             numberOfUsers.add("");
         }
         when(statisticsMock.userNames()).thenReturn(numberOfUsers);
-        StatisticsOfForum statisticsOfForum = new StatisticsOfForum();
-        statisticsOfForum.calculateAdvStatistics(statisticsMock);
 
         Assert.assertEquals(100, numberOfUsers.size());
     }
