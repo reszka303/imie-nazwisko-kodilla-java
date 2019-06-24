@@ -112,8 +112,10 @@ public class ForumStatisticsTestSuite {
         Statistics statisticsMock = mock(Statistics.class);
         ArrayList<String> numbersOfUsers = new ArrayList<>();
         when(statisticsMock.userNames()).thenReturn(numbersOfUsers);
+        StatisticsOfForum statisticsOfForum = new StatisticsOfForum();
+        statisticsOfForum.calculateAdvStatistics(statisticsMock);
 
-        Assert.assertEquals(0, numbersOfUsers.size());
+        Assert.assertEquals(0, statisticsOfForum.getNumbersOfUsers());
     }
 
     @Test
@@ -125,7 +127,9 @@ public class ForumStatisticsTestSuite {
             numberOfUsers.add("");
         }
         when(statisticsMock.userNames()).thenReturn(numberOfUsers);
+        StatisticsOfForum statisticsOfForum = new StatisticsOfForum();
+        statisticsOfForum.calculateAdvStatistics(statisticsMock);
 
-        Assert.assertEquals(100, numberOfUsers.size());
+        Assert.assertEquals(100, statisticsOfForum.getNumbersOfUsers());
     }
 }
