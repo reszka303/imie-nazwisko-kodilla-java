@@ -32,7 +32,7 @@ public class OddNumberExterminatorTestSuite {
     OddNumbersExterminator exterminator = new OddNumbersExterminator();
     ArrayList<Integer> result = exterminator.exterminate(emptyList);
 
-    Assert.assertEquals(0, result);
+    Assert.assertEquals(emptyList, result);
     }
 
 @Test
@@ -40,11 +40,11 @@ public class OddNumberExterminatorTestSuite {
 
     ArrayList<Integer> evenAndOddList = new ArrayList<>();
 
-   evenAndOddList.add(1);
-   evenAndOddList.add(2);
-   evenAndOddList.add(3);
-   evenAndOddList.add(4);
-   evenAndOddList.add(5);
+    evenAndOddList.add(1);
+    evenAndOddList.add(2);
+    evenAndOddList.add(3);
+    evenAndOddList.add(4);
+    evenAndOddList.add(5);
 
    ArrayList<Integer> evenList = new ArrayList<>();
 
@@ -55,9 +55,6 @@ public class OddNumberExterminatorTestSuite {
    ArrayList<Integer> result = exterminator.exterminate(evenAndOddList);
 
    Assert.assertEquals(evenList, result);
-
-
-
     }
 }
 
