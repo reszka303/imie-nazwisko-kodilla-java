@@ -14,7 +14,7 @@ public final class People {
         theList.add("Matilda Davies");
         theList.add("Declan Booth");
         theList.add("Corinne Foster");
-        theList.add("Khloe fry");
+        theList.add("Khloe Fry");
         theList.add("Martin Valenzuela");
         return new ArrayList<>(theList);
     }
