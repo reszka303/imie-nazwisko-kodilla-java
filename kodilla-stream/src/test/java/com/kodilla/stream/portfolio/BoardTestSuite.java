@@ -3,10 +3,16 @@ package com.kodilla.stream.portfolio;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalDouble;
 
+
+import static java.time.temporal.ChronoUnit.DAYS;
 import static java.util.stream.Collectors.toList;
 
 public class BoardTestSuite {
@@ -138,6 +144,16 @@ public class BoardTestSuite {
     }
     @Test
     public void testAddTaskListAverageWorkingOnTask(){
+        Board project = prepareTestData();
 
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        OptionalDouble average = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .mapToDouble(t -> DAYS.between(t.getCreated(),LocalDate.now()))
+                .average();
+
+        Assert.assertEquals(10.0,average.getAsDouble(),0.001);
     }
 }

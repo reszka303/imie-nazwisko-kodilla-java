@@ -32,7 +32,7 @@ public class ArrayOperationsTestSuite {
         double average = ArrayOperations.getAverage(numbers);
 
 
-        Assert.assertEquals(20,numbers.length);
+        Assert.assertEquals(20, numbers.length);
         Assert.assertEquals(3.0, average, 0.001);
     }
 }
