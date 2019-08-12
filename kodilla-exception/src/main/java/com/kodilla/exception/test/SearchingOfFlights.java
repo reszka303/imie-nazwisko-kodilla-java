@@ -13,11 +13,11 @@ public final class SearchingOfFlights {
         connections.put("Airport of Tokyo", true);
         connections.put("Airport of Luxembourg", false);
 
-        if(!connections.containsKey(flight.getArrivalAirport())) {
+        if(connections.containsKey(flight.getArrivalAirport())) {
             throw new RouteNotFoundException("There is no Arrival");
         }
 
-        if(!connections.containsKey(flight.getDepartureAirport())) {
+        if(connections.containsKey(flight.getDepartureAirport())) {
             throw new RouteNotFoundException("There is no Departure");
         }
     }
