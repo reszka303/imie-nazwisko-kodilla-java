@@ -13,6 +13,8 @@ public final class SearchingOfFlights {
         connections.put("Airport of Tokyo", true);
         connections.put("Airport of Luxembourg", false);
 
+
+
         if(connections.containsKey(flight.getArrivalAirport())) {
             throw new RouteNotFoundException("There is no Arrival");
         }
@@ -26,11 +28,11 @@ public final class SearchingOfFlights {
         SearchingOfFlights searchingOfFlights = new SearchingOfFlights();
 
         try {
-            searchingOfFlights.findFlight(new Flight("Airport of Sydney", "Airport of New York"));
+            searchingOfFlights.findFlight(new Flight("Airport of London", "Airport of Luxembourg"));
         } catch (RouteNotFoundException e) {
             System.out.println("Problem with the route: " + e.getMessage());
         } finally {
-            System.out.println("Logging flight searches");
+            System.out.println("System off");
         }
     }
 }
