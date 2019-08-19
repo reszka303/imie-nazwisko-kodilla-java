@@ -15,11 +15,11 @@ public final class SearchingOfFlights {
 
 
 
-        if(connections.containsKey(flight.getArrivalAirport())) {
+        if(!connections.containsKey(flight.getArrivalAirport())|| connections.get(flight.getArrivalAirport())== false) {
             throw new RouteNotFoundException("There is no Arrival");
         }
 
-        if(connections.containsKey(flight.getDepartureAirport())) {
+        if(!connections.containsKey(flight.getDepartureAirport()) || connections.get(flight.getDepartureAirport()) == false) {
             throw new RouteNotFoundException("There is no Departure");
         }
     }

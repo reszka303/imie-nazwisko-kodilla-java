@@ -9,14 +9,14 @@ public class AirportsSearching {
 
         connections.add("London");
         connections.add("Warsaw");
-        connections.add(null);
-        connections.add(null);
+        connections.add("Krakow");
+        connections.add("Wroclaw");
 
-        if (connections.contains(flight.getArrivalAirport())) {
+        if (!connections.contains(flight.getArrivalAirport())) {
             throw new RouteNotFoundException("There is no arrival");
         }
 
-        if (connections.contains(flight.getDepartureAirport())) {
+        if (!connections.contains(flight.getDepartureAirport())) {
             throw new RouteNotFoundException("There is no departure");
         }
    }

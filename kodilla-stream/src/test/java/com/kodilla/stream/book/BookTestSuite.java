@@ -3,7 +3,7 @@ package com.kodilla.stream.book;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -41,7 +41,7 @@ public class BookTestSuite {
     public void testGetListUsingIntStreamLong() {
         BookDirectory bookDirectory = new BookDirectory();
 
-        List<Book> books = new ArrayList<>();
+        List<Book> books = bookDirectory.getList();
 
         long numberOfBooksPublicatedAfter2007 = IntStream.range(0,books.size())
                 .filter(n -> books.get(n).getYearOfPublication() > 2007)
