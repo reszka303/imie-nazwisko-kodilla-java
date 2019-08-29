@@ -19,7 +19,7 @@ public class OrderDto {
         return product;
     }
 
-    public boolean isRented() {
+    public boolean isOrdered() {
         return isOrdered;
     }
 }
