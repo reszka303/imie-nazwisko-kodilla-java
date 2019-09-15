@@ -7,14 +7,15 @@ import java.util.stream.Collectors;
 public class InterconnectionFinder implements FlightFinder {
     private AllFlightsSet allFlightsSet;
 
-    public InterconnectionFinder(AllFlightsSet allFlightsSet) {
-        this.allFlightsSet = allFlightsSet;
+    public InterconnectionFinder() {
+        this.allFlightsSet = new AllFlightsSet();
     }
 
+    @Override
     public void findFlight() {
         Set<InterconnectionFlight> flightsWithInterconnection = new HashSet<>();
         for (Flight flight:
-             allFlightsSet.getAllFlightsSet()) {
+                allFlightsSet.getAllFlightsSet()) {
             Set<InterconnectionFlight> temporarySet = allFlightsSet.getAllFlightsSet().stream()
                     .filter(f -> f.getDeparture().equals(flight.getDestination()) && !(f.getDestination().equals(flight.getDeparture())))
                     .map(f -> new InterconnectionFlight(flight.getDeparture(), f.getDeparture(), f.getDestination()))
@@ -23,16 +24,15 @@ public class InterconnectionFinder implements FlightFinder {
             flightsWithInterconnection.addAll(temporarySet);
         }
 
-        if(flightsWithInterconnection.size() == 0) {
-            System.out.println("No flights with interconnection.");
+        if (flightsWithInterconnection.size() == 0) {
+            System.out.println("No flights with interconnection");
         } else {
-            System.out.println("Please find our flights with interconnection:");
+            System.out.println("Please find our flights with interconnection: ");
             flightsWithInterconnection.stream()
                     .map(f -> "Departure: " + f.getDeparture() +
                             " -> interconnection: " + f.getInterconnection() +
                             " -> destination: " + f.getDestination())
                     .forEach(System.out::println);
         }
-
     }
 }

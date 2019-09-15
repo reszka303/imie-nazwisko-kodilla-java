@@ -18,9 +18,9 @@ public class DepartureFinder implements FlightFinder {
         if(flightsWithDeparture.size() == 0) {
             System.out.println("No flights from departure" + departure);
         } else {
-            System.out.println("Please find our flights from departure" + departure);
+            System.out.println("Please find our flights from departure " + departure);
             flightsWithDeparture.stream()
-                    .map(f -> "Departure: " + f.getDeparture() + "destination: " + f.getDestination())
+                    .map(f -> "Departure: " + f.getDeparture() + " destination: " + f.getDestination())
                     .forEach(System.out::println);
         }
     }

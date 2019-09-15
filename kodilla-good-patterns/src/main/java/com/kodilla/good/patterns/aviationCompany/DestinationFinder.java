@@ -7,6 +7,10 @@ import java.util.stream.Collectors;
 public class DestinationFinder implements FlightFinder {
     private String destination;
 
+    public DestinationFinder(String destination) {
+        this.destination = destination;
+    }
+
     public void findFlight() {
         Set<Flight> flightsWithDestination = (new AllFlightsSet().getAllFlightsSet().stream())
                 .filter(f -> f.getDestination().equals(destination))
@@ -18,7 +22,7 @@ public class DestinationFinder implements FlightFinder {
             System.out.println("Please find our flights to destination: " + destination);
 
             flightsWithDestination.stream()
-                    .map(f -> "Departure: " + f.getDestination() + "destination: " + f.getDestination())
+                    .map(f -> "Departure: " + f.getDestination() + " destination: " + f.getDestination())
                     .forEach(System.out::println);
         }
     }

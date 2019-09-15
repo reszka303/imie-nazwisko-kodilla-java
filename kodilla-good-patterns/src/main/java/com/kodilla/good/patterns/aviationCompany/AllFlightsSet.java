@@ -8,7 +8,7 @@ public class AllFlightsSet {
 
     public AllFlightsSet() {
         allFlightsSet = new HashSet<>();
-        allFlightsSet.add(new Flight("Warszawa", " Wrocław"));
+        allFlightsSet.add(new Flight("Warszawa", "Wrocław"));
         allFlightsSet.add(new Flight("Gdańsk", "Warszawa"));
         allFlightsSet.add(new Flight("Warszawa", "Kraków"));
         allFlightsSet.add(new Flight("Kraków", "Wrocław"));

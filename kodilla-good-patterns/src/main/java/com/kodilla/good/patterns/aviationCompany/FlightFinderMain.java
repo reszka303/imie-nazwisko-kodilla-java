@@ -8,15 +8,15 @@ public class FlightFinderMain {
                 .forEach(System.out::println);
         System.out.println();
 
-//        FlightFinderExecutor flightFinderExecutor1 = new FlightFinderExecutor(new InterconnectionFinder());
-//        flightFinderExecutor1.execute();
-//        System.out.println();
+        FlightFinderExecutor flightFinderExecutor1 = new FlightFinderExecutor(new InterconnectionFinder());
+        flightFinderExecutor1.execute();
+        System.out.println();
 
         FlightFinderExecutor flightFinderExecutor2 = new FlightFinderExecutor(new DepartureFinder("Warszawa"));
         flightFinderExecutor2.execute();
         System.out.println();
 
-//        FlightFinderExecutor flightFinderExecutor3 = new FlightFinderExecutor(new DestinationFinder("Warszawa"));
-//        flightFinderExecutor3.execute();
+        FlightFinderExecutor flightFinderExecutor3 = new FlightFinderExecutor(new DestinationFinder("Warszawa"));
+        flightFinderExecutor3.execute();
     }
 }
