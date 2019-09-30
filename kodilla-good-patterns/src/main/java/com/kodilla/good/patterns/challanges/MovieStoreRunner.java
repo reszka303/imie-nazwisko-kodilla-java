@@ -1,8 +1,5 @@
 package com.kodilla.good.patterns.challanges;
 
-
-import com.kodilla.good.patterns.challanges.MovieStore;
-
 import java.util.stream.Collectors;
 
 public class MovieStoreRunner {
