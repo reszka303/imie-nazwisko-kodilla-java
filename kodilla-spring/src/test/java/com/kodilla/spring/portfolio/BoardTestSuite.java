@@ -14,13 +14,13 @@ public class BoardTestSuite {
                 new AnnotationConfigApplicationContext(BoardConfig.class);
         Board board = context.getBean(Board.class);
 
-        List<String> toDo = board.getToDoList().getTask();
+        List<String> toDo = board.getToDoList().getTasks();
         toDo.add("Task to do");
 
-        List<String> inProgress = board.getInProgressList().getTask();
+        List<String> inProgress = board.getInProgressList().getTasks();
         inProgress.add("Task in progress");
 
-        List<String> done = board.getDoneList().getTask();
+        List<String> done = board.getDoneList().getTasks();
         done.add("Task done");
 
         Assert.assertEquals("Task to do", toDo.get(0));
