@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.patterns.singleton.LoggerTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-05T00:45:58" hostname="Asus" time="0.008">
+<testsuite name="com.kodilla.patterns.singleton.LoggerTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-24T14:06:30" hostname="Asus" time="0.001">
   <properties/>
-  <testcase name="testGetLastLog" classname="com.kodilla.patterns.singleton.LoggerTestSuite" time="0.008"/>
+  <testcase name="testGetLastLog" classname="com.kodilla.patterns.singleton.LoggerTestSuite" time="0.001"/>
   <system-out><![CDATA[Log: [Operation finished]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

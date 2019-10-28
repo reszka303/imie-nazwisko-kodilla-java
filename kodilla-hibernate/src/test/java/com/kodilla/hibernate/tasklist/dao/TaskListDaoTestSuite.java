@@ -14,20 +14,20 @@ import java.util.List;
 @SpringBootTest
 public class TaskListDaoTestSuite {
     @Autowired
-    TaskListDao taskListDao;
-    public static final String DESCRIPTION = "I create another table by the agency of Hibernate";
+    private TaskListDao taskListDao;
+    private static final String LISTNAME = "ToDo";
 
     @Test
     public void testFindByListName() {
-
-        TaskList taskList = new TaskList("LISTNAME", "DESCRIPTION");
+        //Given
+        TaskList taskList = new TaskList(LISTNAME, "Tasks to do");
         taskListDao.save(taskList);
-        String listName = taskList.getListName();
-
-        List<TaskList> readTaskLists = taskListDao.findByListName(listName);
-
-        Assert.assertEquals(1,readTaskLists.size());
-
+        String name = taskList.getListName();
+        //When
+        List<TaskList> readTaskLists = taskListDao.findByListName(name);
+        //Then
+        Assert.assertEquals(1, readTaskLists.size());
+        //CleanUp
         int id = readTaskLists.get(0).getId();
         taskListDao.deleteById(id);
     }
