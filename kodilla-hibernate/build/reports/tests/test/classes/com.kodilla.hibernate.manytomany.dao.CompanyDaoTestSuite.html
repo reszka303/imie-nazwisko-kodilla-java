@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.207s</div>
+<div class="counter">0.215s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,17 +79,17 @@
 </thead>
 <tr>
 <td class="success">testCompanyCharacters</td>
-<td class="success">0.046s</td>
+<td class="success">0.041s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testEmployeesLastname</td>
-<td class="success">0.025s</td>
+<td class="success">0.024s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testSaveManyToMany</td>
-<td class="success">0.136s</td>
+<td class="success">0.150s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,12 +97,12 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2019-12-18 14:20:36.081  INFO 12512 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.kodilla.hibernate.manytomany.dao.CompanyDaoTestSuite], using SpringBootContextLoader
-2019-12-18 14:20:36.082  INFO 12512 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.kodilla.hibernate.manytomany.dao.CompanyDaoTestSuite]: no resource found for suffixes {-context.xml, Context.groovy}.
-2019-12-18 14:20:36.082  INFO 12512 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kodilla.hibernate.manytomany.dao.CompanyDaoTestSuite]: CompanyDaoTestSuite does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2019-12-18 14:20:36.093  INFO 12512 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kodilla.hibernate.KodillaHibernateApplication for test class com.kodilla.hibernate.manytomany.dao.CompanyDaoTestSuite
-2019-12-18 14:20:36.096  INFO 12512 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-12-18 14:20:36.097  INFO 12512 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7358d6a7, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@73f459, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5a95d3a6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2e1fd1d7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1b47c75d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4092950, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@70f5d294, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@20342434, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@56c7240, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@48e29814, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@165d92ee]
+<pre>2019-12-20 23:55:14.886  INFO 13076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.kodilla.hibernate.manytomany.dao.CompanyDaoTestSuite], using SpringBootContextLoader
+2019-12-20 23:55:14.887  INFO 13076 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.kodilla.hibernate.manytomany.dao.CompanyDaoTestSuite]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-20 23:55:14.887  INFO 13076 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kodilla.hibernate.manytomany.dao.CompanyDaoTestSuite]: CompanyDaoTestSuite does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-12-20 23:55:14.898  INFO 13076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kodilla.hibernate.KodillaHibernateApplication for test class com.kodilla.hibernate.manytomany.dao.CompanyDaoTestSuite
+2019-12-20 23:55:14.901  INFO 13076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-12-20 23:55:14.902  INFO 13076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@579fb6e1, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@885c02e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7553050f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@247725a6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@e75b777, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@28d78227, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4541814f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5886d654, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7beb1c3c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6fb97fdc, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@263bc09d]
 Hibernate: select next_val as id_val from hibernate_sequence for update
 Hibernate: update hibernate_sequence set next_val= ? where next_val=?
 Hibernate: select next_val as id_val from hibernate_sequence for update
@@ -180,7 +180,7 @@ Hibernate: delete from employee where employee_id=?
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 5.2.1</a> at 2019-12-18 14:20:37</p>
+<a href="http://www.gradle.org">Gradle 5.2.1</a> at 2019-12-20 23:55:16</p>
 </div>
 </div>
 </body>
