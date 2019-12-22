@@ -10,10 +10,12 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
+@SpringBootTest
 @RunWith(SpringRunner.class)
 public class FacadeTestSuite {
     @Autowired
@@ -26,11 +28,11 @@ public class FacadeTestSuite {
     @Test
     public void testGetCompanyBySomeName() throws NotFoundExceptionCE {
         //Given
-        Company dataMaesters = new Company("Data Maesters");
+        Company dataMaesters = new Company("XYZ");
         companyDao.save(dataMaesters);
         //When
         int dataMaestersId = dataMaesters.getId();
-        List<Company> companiesBySomeName = facade.getCompanyBySomeName("aest");
+        List<Company> companiesBySomeName = facade.getCompanyBySomeName("XYZ");
         //Then
         Assert.assertEquals(1, companiesBySomeName.size());
         //CleanUp
@@ -40,11 +42,11 @@ public class FacadeTestSuite {
     @Test
     public void testGetEmployeeBySomeName() throws NotFoundExceptionCE {
         //Given
-        Employee johnSmith = new Employee("John", "Smith");
+        Employee johnSmith = new Employee("John", "XYZ");
         employeeDao.save(johnSmith);
         //When
         int nameID = johnSmith.getId();
-        List<Employee> employeesBySomeName = facade.getEmployeeBySomeName("ith");
+        List<Employee> employeesBySomeName = facade.getEmployeeBySomeName("XYZ");
         //Then
         Assert.assertEquals(1, employeesBySomeName.size());
         //CleanUp
